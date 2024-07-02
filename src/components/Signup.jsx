@@ -16,6 +16,7 @@ function Signup() {
     setError("");
     try {
       const userData = await authService.createAccount(data);
+
       if (userData) {
         const useData = await authService.getCorrentUser();
         if (useData) dispatch(login(useData));
@@ -25,6 +26,7 @@ function Signup() {
       setError(error.message);
     }
   };
+  
   return (
     <div className="flex items-center justify-center">
       <div
